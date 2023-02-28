@@ -1,0 +1,118 @@
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<!-- Styles -->
+
+    <!-- <link type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" />
+
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+
+	<link type="text/css"  rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}"/> -->
+
+	<!-- /Styles -->
+	<style>
+		input.btnRegister {
+            position: relative;
+            left: 50px;
+
+        }
+		h3.register-heading {
+			position: relative;
+            left: 20px;
+		}
+        body            { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+a, h1, h2       { color: #377ba8; }
+h1, h2          { margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+
+table {
+    border: .5px solid lightgray;
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    border: .5px solid lightgray;
+    text-align: center;
+}
+td {
+    border: .5px solid lightgray;
+    text-align: center;
+    white-space:nowrap
+}
+
+table.dataframe, .dataframe th, .dataframe td {
+  table-layout:fixed;
+  border-bottom: 1px solid #C8C8C8;
+  border-collapse: collapse;
+  text-align:left;
+  padding: 10px;
+  margin-bottom: 40px;
+  font-size: 0.9em;
+}
+
+.dataframe td { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+}
+
+
+.male th {
+    background-color: #add8e6;
+    color: white;
+}
+
+.female th {
+    background-color: #77dd77;
+    color: white;
+}
+
+tr:nth-child(odd)		{ background-color:#eee; }
+tr:nth-child(even)	{ background-color:#fff; }
+
+tr:hover            { background-color: #ffff99;}
+	</style>
+</head>
+<body class="rtl">
+	<div class="container register">
+		<div class="row">
+			<!-- Right Side Title -->
+			<div class="col-12 col-md-9">
+				<div class="register-left p-3">
+					<!-- Tabs Nav-bar -->
+					<!-- /Tabs Nav-bar -->
+					<div class="tab-content" id="myTabContent">
+						<!-- Tab 1 -->
+						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+							<div class=page>
+                                {% for table in tables %}
+                                    <h2>{{titles[loop.index]}}</h2>
+                                    {{ table|safe }}
+                                {% endfor %}
+                                </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Left Side Forms -->
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<!-- <script src="js/jquery-3.1.1.min.js"></script> -->
+
+	<script src="js/jquery-3.1.1.min.js"></script>
+
+	<!-- <script src="js/bootstrap.min.js"></script> -->
+	<script src="js/bootstrap.min.js'"></script>
+	<!-- /Scripts -->
+</body>
+</html>
+{% endblock %}
